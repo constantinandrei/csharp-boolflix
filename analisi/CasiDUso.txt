@@ -7,3 +7,22 @@
    4. Contenuti piu guardati sulla piattaforma
    5. Contenuti divisi in varie categorie//
 3. L’utente sceglie il contenuto e inizia a vedere i dettagli e le funzioni prevviste
+
+
+Visualizzazione Informazioni Contenuto
+1. Viene riprodotto il trailer
+2. Vengono mostrati i nomi del cast
+3. Viene data la possibilità di inizare oppure riprendere la riproduzione
+4. Viene data la possibilità di aggiungere il contenuto a una lista
+
+Gestione account
+1. Possibilità di aggiornare il pagamento e l'abbonamanto
+2. Possibilità di gestire i profili utente
+3. Possibilità di gestire i dispositivi
+4. Possibilità di modificare i dati dell'utente
+
+Gestione Lista Contenuti
+1. Visualizzazione contenuti e possibilità di vedere il dettaglio (vedi Visualizzazione Informazioni Contenuto)
+
+Ricerca Per Titolo Contenuto
+1. Visualizzazione dei contenuti contenenti un particolare testo nel titolo
