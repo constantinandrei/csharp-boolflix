@@ -1,0 +1,9 @@
+﻿Bacheca Contenuti
+1. Vengono presentati i contenuti disponibili sulla piattaforma
+2. L’utente può sfogliare i contenuti divisi in categorie
+   1. Contenuto Sponsorizzato
+   2. Contenuti con la riproduzione in sospeso
+   3. Contenuti raccomandati per l’utente
+   4. Contenuti piu guardati sulla piattaforma
+   5. Contenuti divisi in varie categorie//
+3. L’utente sceglie il contenuto e inizia a vedere i dettagli e le funzioni prevviste
