@@ -17,7 +17,12 @@ namespace csharp_boolflix.Areas.Contents.Data
             return db.Contents.ToList();
         }
 
-        public void TestInsert()
+        public void CreateFilm()
+        {
+
+        }
+
+        public void CreateSeries()
         {
             Film film = new Film();
             film.Title = "Lo Squalo";
