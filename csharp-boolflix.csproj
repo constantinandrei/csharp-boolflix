@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\GuestUser\Data\" />
+    <Folder Include="Areas\Contents\Data\" />
   </ItemGroup>
 
 </Project>

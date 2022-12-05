@@ -1,3 +1,4 @@
+using csharp_boolflix.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -6,6 +7,15 @@ namespace csharp_boolflix.Areas.Identity.Data;
 
 public class IdentityDataContext : IdentityDbContext<IdentityUser>
 {
+    public DbSet<Content> Contents { get; set; }
+    public DbSet<Category> Categories { get; set; } 
+    public DbSet<Cast> Cast { get; set; }
+    public DbSet<Series> Series { get; set; }
+    public DbSet<Season> Seasons { get; set; }
+    public DbSet<Film> Films { get; set; }
+    public DbSet<Episode> Episodes { get; set; }
+    public DbSet<Video> Video { get; set; }
+
     public IdentityDataContext(DbContextOptions<IdentityDataContext> options)
         : base(options)
     {
