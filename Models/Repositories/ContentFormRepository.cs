@@ -9,7 +9,7 @@ namespace csharp_boolflix.Models.Repositories
     {
         public BoolflixDBRepository repository;
 
-        public ContentFormRepository(BoolflixDBRepository drepository)
+        public ContentFormRepository(BoolflixDBRepository repository)
         {
             this.repository = repository;
         }

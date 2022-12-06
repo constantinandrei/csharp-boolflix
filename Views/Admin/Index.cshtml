@@ -3,9 +3,14 @@
 }
 
 <div class="text-center">
-   <a asp-controller="Content" asp-action="Create">
+    <a asp-controller="Content" asp-action="Create" asp-route-discriminator="Film">
        <span class="btn btn-primary">
-           Aggiungi Contenuto
+           Aggiungi Film
+       </span>
+   </a>
+   <a asp-controller="Content" asp-action="Create" asp-route-discriminator="Series">
+       <span class="btn btn-primary">
+           Aggiungi Serie
        </span>
    </a>
 </div>

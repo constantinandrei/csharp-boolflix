@@ -7,6 +7,7 @@ namespace csharp_boolflix.Models.Form
     {
         public Content Content { get; set; }
         public List<SelectListItem>? Categories { get; set; }
-        List<int>? SelectedCategories { get; set; }
+        public List<int>? SelectedCategories { get; set; }
+
     }
 }

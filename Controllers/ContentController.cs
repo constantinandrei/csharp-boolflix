@@ -21,10 +21,18 @@ namespace csharp_boolflix.Controllers
             return View();
         }
 
-        public IActionResult Create()
+        public IActionResult Create(string discriminator)
         {
-            
-            return View();
+            return View(formData.Create(discriminator));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(ContentForm form)
+        {
+            if (!ModelState.IsValid)
+                return View(form);
+            return RedirectToAction("Index");
         }
     }
 }

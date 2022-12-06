@@ -2,4 +2,32 @@
 @model ContentForm
 
 
+<div class="row justify-content-center">
+    <div class="col col-md-8">
+        <form asp-controller="Content" asp-action="Create" method="post">
 
+            <div class="mb-3">
+                <strong>Titolo:</strong>
+                <input asp-for="Content.Title" class="d-block w-100" />
+                <span asp-validation-for="Content.Title" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <strong>Descrizione:</strong>
+                <textarea asp-for="Content.Cover" rows="5" class="d-block w-100"></textarea>
+                <span asp-validation-for="Content.Cover" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <strong>Categorie:</strong>
+                <select asp-for="SelectedCategories"
+                        asp-items="@Model.Categories"
+                        size="5"
+                        class="form-control mb-2 mr-sm-2 ml-sm-3 leftList">
+                </select>
+            </div>
+            <div class="text-end">
+                <input type="submit" class="btn btn-small btn-success" value="Salva">
+            </div>
+
+        </form>
+    </div>
+</div>
