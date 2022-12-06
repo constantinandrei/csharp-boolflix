@@ -16,8 +16,8 @@ namespace csharp_boolflix.Models.Repositories
         public ContentForm Create(string discriminator)
         {
             ContentForm form = new ContentForm();
-            form.Categories = new List<SelectListItem>();
-            List<Category> categories = new List<Category>();
+            form.Discriminator = discriminator;
+            List<Category> categories = repository.GetCategories();
             foreach (Category category in categories)
             {
                 form.Categories.Add(new SelectListItem(category.Name, category.Id.ToString()));
@@ -27,6 +27,7 @@ namespace csharp_boolflix.Models.Repositories
             {
                 case "Film":
                     form.Content = new Film();
+                    
                     break;
                 case "Series":
                     form.Content = new Series();

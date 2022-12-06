@@ -22,17 +22,23 @@ namespace csharp_boolflix.Models.Repositories
             return db.Categories.ToList();
         }
 
-        public void CreateFilm()
-        {
-
-        }
-
-        public void CreateSeries()
+        public void CreateFilm(Content content)
         {
             Film film = new Film();
-            film.Title = "Lo Squalo";
-            film.Cover = "cover";
+            film.Title = content.Title;
+            film.Cover = content.Cover;
+
             db.Contents.Add(film);
+            db.SaveChanges();
+        }
+
+        public void CreateSeries(Content content)
+        {
+            Series series = new Series();
+            series.Title = content.Title;
+            series.Cover = content.Cover;
+
+            db.Contents.Add(series);
             db.SaveChanges();
         }
     }

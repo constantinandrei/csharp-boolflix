@@ -8,6 +8,10 @@ namespace csharp_boolflix.Models.Form
         public Content Content { get; set; }
         public List<SelectListItem>? Categories { get; set; }
         public List<int>? SelectedCategories { get; set; }
-
+        public string Discriminator { get; set; }
+        public ContentForm()
+        {
+            Categories = new List<SelectListItem>();
+        }
     }
 }

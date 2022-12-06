@@ -16,6 +16,7 @@
                 <textarea asp-for="Content.Cover" rows="5" class="d-block w-100"></textarea>
                 <span asp-validation-for="Content.Cover" class="text-danger"></span>
             </div>
+            <input asp-for="Discriminator" value="@Model.Discriminator" hidden/>
             <div class="mb-3">
                 <strong>Categorie:</strong>
                 <select asp-for="SelectedCategories"

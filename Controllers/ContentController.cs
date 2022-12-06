@@ -1,4 +1,5 @@
-﻿using csharp_boolflix.Models.Form;
+﻿using csharp_boolflix.Models;
+using csharp_boolflix.Models.Form;
 using csharp_boolflix.Models.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -32,6 +33,15 @@ namespace csharp_boolflix.Controllers
         {
             if (!ModelState.IsValid)
                 return View(form);
+            switch (form.Discriminator)
+            {
+                case "Film":
+                    repository.CreateFilm(form.Content);
+                    break;
+                case "Series":
+                    repository.CreateSeries(form.Content);
+                    break;
+            }
             return RedirectToAction("Index");
         }
     }
