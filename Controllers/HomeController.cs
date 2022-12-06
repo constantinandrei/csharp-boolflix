@@ -1,6 +1,6 @@
-﻿using csharp_boolflix.Areas.Contents.Data;
-using csharp_boolflix.Areas.Identity.Data;
+﻿using csharp_boolflix.Areas.Identity.Data;
 using csharp_boolflix.Models;
+using csharp_boolflix.Models.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

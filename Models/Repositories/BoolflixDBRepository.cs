@@ -1,9 +1,9 @@
 ﻿using csharp_boolflix.Areas.Identity.Data;
 using csharp_boolflix.Models;
 
-namespace csharp_boolflix.Areas.Contents.Data
+namespace csharp_boolflix.Models.Repositories
 {
-    public class BoolflixDBRepository 
+    public class BoolflixDBRepository
     {
         private IdentityDataContext db;
 
