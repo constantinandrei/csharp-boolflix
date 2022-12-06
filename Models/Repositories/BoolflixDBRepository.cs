@@ -17,6 +17,11 @@ namespace csharp_boolflix.Models.Repositories
             return db.Contents.ToList();
         }
 
+        public List<Category> GetCategories()
+        {
+            return db.Categories.ToList();
+        }
+
         public void CreateFilm()
         {
 
