@@ -7,7 +7,6 @@ namespace csharp_boolflix.Areas.Identity.Data;
 
 public class IdentityDataContext : IdentityDbContext<IdentityUser>
 {
-    public DbSet<Content> Contents { get; set; }
     public DbSet<Category> Categories { get; set; } 
     public DbSet<Cast> Cast { get; set; }
     public DbSet<Series> Series { get; set; }

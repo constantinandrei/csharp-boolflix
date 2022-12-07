@@ -12,8 +12,8 @@ using csharp_boolflix.Areas.Identity.Data;
 namespace csharpboolflix.Migrations
 {
     [DbContext(typeof(IdentityDataContext))]
-    [Migration("20221207084430_AddsDescriptionFieldToContent")]
-    partial class AddsDescriptionFieldToContent
+    [Migration("20221207130723_FirstMigration")]
+    partial class FirstMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -312,7 +312,7 @@ namespace csharpboolflix.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Contents");
+                    b.ToTable("Content");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Content");
 
@@ -474,7 +474,7 @@ namespace csharpboolflix.Migrations
             modelBuilder.Entity("csharp_boolflix.Models.Cast", b =>
                 {
                     b.HasOne("csharp_boolflix.Models.Content", null)
-                        .WithMany("Cast")
+                        .WithMany("Casts")
                         .HasForeignKey("ContentId");
                 });
 
@@ -513,7 +513,7 @@ namespace csharpboolflix.Migrations
 
             modelBuilder.Entity("csharp_boolflix.Models.Content", b =>
                 {
-                    b.Navigation("Cast");
+                    b.Navigation("Casts");
                 });
 
             modelBuilder.Entity("csharp_boolflix.Models.Series", b =>

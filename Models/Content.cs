@@ -6,7 +6,7 @@
         public string Title { get; set; }
         public string? Description { get; set; }
         public string? Cover { get; set; }
-        public List<Cast>? Cast { get; set; }
+        public List<Cast>? Casts { get; set; }
         public List<Category>? Categories { get; set; }
     }
 }

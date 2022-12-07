@@ -1,6 +1,5 @@
 ﻿using csharp_boolflix.Areas.Identity.Data;
 using csharp_boolflix.Models;
-using csharp_boolflix.Models.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -8,14 +7,6 @@ namespace csharp_boolflix.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        public BoolflixDBRepository data;
-
-        public HomeController(ILogger<HomeController> logger, BoolflixDBRepository _data)
-        {
-            _logger = logger;
-            data = _data;
-        }
 
         public IActionResult Index()
         {
@@ -24,11 +15,6 @@ namespace csharp_boolflix.Controllers
         }
 
         public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        public IActionResult Create()
         {
             return View();
         }
