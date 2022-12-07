@@ -33,15 +33,7 @@ namespace csharp_boolflix.Controllers
         {
             if (!ModelState.IsValid)
                 return View(form);
-            switch (form.Discriminator)
-            {
-                case "Film":
-                    repository.CreateFilm(form.Content);
-                    break;
-                case "Series":
-                    repository.CreateSeries(form.Content);
-                    break;
-            }
+            repository.Create(form.Content, form.SelectedCategories, form.Discriminator);
             return RedirectToAction("Index");
         }
     }

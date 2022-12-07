@@ -22,23 +22,39 @@ namespace csharp_boolflix.Models.Repositories
             return db.Categories.ToList();
         }
 
-        public void CreateFilm(Content content)
+        public Category GetCategory(int id)
         {
-            Film film = new Film();
-            film.Title = content.Title;
-            film.Cover = content.Cover;
-
-            db.Contents.Add(film);
-            db.SaveChanges();
+            return db.Categories.FirstOrDefault(c => c.Id == id);
         }
 
-        public void CreateSeries(Content content)
+        public void Create(Content content, List<int> selectedCategories, string discriminator)
         {
-            Series series = new Series();
-            series.Title = content.Title;
-            series.Cover = content.Cover;
+            content.Categories = new List<Category>();
+            foreach (int id in selectedCategories)
+            {
+                content.Categories.Add(GetCategory(id));
+            }
 
-            db.Contents.Add(series);
+            switch (discriminator)
+            {
+                case "Film":
+                    Film film = new Film();
+                    film.Categories = new List<Category>();
+                    content.Categories.ForEach(c => film.Categories.Add(c));
+                    film.Cover = content.Cover;
+                    film.Title = content.Title;
+                    db.Contents.Add(film);
+                    break;
+                case "Series":
+                    Series series = new Series();
+                    series.Categories = new List<Category>();
+                    content.Categories.ForEach(c => series.Categories.Add(c));
+                    series.Cover = content.Cover;
+                    series.Title = content.Title;
+                    db.Contents.Add(series);
+                    break;
+            }
+            
             db.SaveChanges();
         }
     }
