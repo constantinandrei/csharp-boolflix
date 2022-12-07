@@ -33,7 +33,9 @@ namespace csharp_boolflix.Controllers
         {
             if (!ModelState.IsValid)
                 return View(form);
-            repository.Create(form.Content, form.SelectedCategories, form.Discriminator);
+            if (form.Video == null)
+                form.Video = new Video();
+            repository.Create(form.Content, form.SelectedCategories, form.Discriminator, form.Video);
             return RedirectToAction("Index");
         }
     }

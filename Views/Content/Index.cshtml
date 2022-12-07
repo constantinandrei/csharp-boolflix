@@ -3,12 +3,13 @@
     @foreach (Content content in Model)
     {
             <div class="card">
+            <img class="card-img" href="@content.Cover" />
                 <div class="card-body">
                     <div class="card-text">
                         Titolo: @content.Title
                     </div>
                     <div class="card-text">
-                        Descrizione: @content.Cover
+                        Descrizione: @content.Description
                     </div>
                 @if (content is Series)
                 {

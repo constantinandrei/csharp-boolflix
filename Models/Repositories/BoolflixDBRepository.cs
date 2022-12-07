@@ -28,7 +28,7 @@ namespace csharp_boolflix.Models.Repositories
             return db.Categories.FirstOrDefault(c => c.Id == id);
         }
 
-        public void Create(Content content, List<int> selectedCategories, string discriminator)
+        public void Create(Content content, List<int> selectedCategories, string discriminator, Video? video = null)
         {
             content.Categories = new List<Category>();
             foreach (int id in selectedCategories)
@@ -45,6 +45,8 @@ namespace csharp_boolflix.Models.Repositories
                     film.Cover = content.Cover;
                     film.Title = content.Title;
                     db.Contents.Add(film);
+                    db.SaveChanges();
+                    Create(video, film.Id);
                     break;
                 case "Series":
                     Series series = new Series();
@@ -53,9 +55,18 @@ namespace csharp_boolflix.Models.Repositories
                     series.Cover = content.Cover;
                     series.Title = content.Title;
                     db.Contents.Add(series);
+                    db.SaveChanges();
                     break;
             }
             
+            
+
+        }
+
+        public void Create(Video video, int contentId)
+        {
+            video.ContentId = contentId;
+            db.Video.Add(video);
             db.SaveChanges();
         }
     }

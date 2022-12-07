@@ -13,9 +13,28 @@
             </div>
             <div class="mb-3">
                 <strong>Descrizione:</strong>
-                <textarea asp-for="Content.Cover" rows="5" class="d-block w-100"></textarea>
+                <input asp-for="Content.Description" rows="5" class="d-block w-100">
+                <span asp-validation-for="Content.Description" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <strong>Cover:</strong>
+                <input asp-for="Content.Cover" class="d-block w-100">
                 <span asp-validation-for="Content.Cover" class="text-danger"></span>
             </div>
+            @if (@Model.Discriminator == "Film")
+            {
+                <div class="mb-3">
+                    <strong>Link:</strong>
+                    <input asp-for="Video.LinkToVideo" class="d-block w-100">
+                    <span asp-validation-for="Video.LinkToVideo" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <strong>Lunghezza:</strong>
+                    <input asp-for="Video.Length" class="d-block w-100">
+                    <span asp-validation-for="Video.Length" class="text-danger"></span>
+                </div>
+                <input asp-for="Video.ContentId" value="0" hidden />
+            }
             <input asp-for="Discriminator" value="@Model.Discriminator" hidden/>
             <div class="mb-3">
                 <strong>Categorie:</strong>
