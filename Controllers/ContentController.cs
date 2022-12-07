@@ -19,7 +19,7 @@ namespace csharp_boolflix.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(repository.Get());
         }
 
         public IActionResult Create(string discriminator)

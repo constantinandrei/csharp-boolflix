@@ -1,5 +1,6 @@
 ﻿using csharp_boolflix.Areas.Identity.Data;
 using csharp_boolflix.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace csharp_boolflix.Models.Repositories
 {
@@ -14,7 +15,7 @@ namespace csharp_boolflix.Models.Repositories
 
         public List<Content> Get()
         {
-            return db.Contents.ToList();
+            return db.Contents.Include(c => c.Categories).ToList();
         }
 
         public List<Category> GetCategories()

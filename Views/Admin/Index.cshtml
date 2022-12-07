@@ -1,8 +1,4 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="text-center">
+﻿<div class="text-center">
     <a asp-controller="Content" asp-action="Create" asp-route-discriminator="Film">
        <span class="btn btn-primary">
            Aggiungi Film
@@ -13,4 +9,11 @@
            Aggiungi Serie
        </span>
    </a>
+   <a asp-controller="Content" asp-action="Index">
+       <span class="btn btn-primary">
+           Lista Contenuti
+       </span>
+   </a>
 </div>
+
+
